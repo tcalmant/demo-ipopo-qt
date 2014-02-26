@@ -1,8 +1,9 @@
 iPOPO Qt Demo
 #############
 
-A two-parts demonstration of the iPOPO framework, shown during the OSGi Users'
-Group France 2013 in Grenoble.
+A two-parts demonstration of the iPOPO framework, shown during the
+`OSGi Users' Group France 2013 <http://france.osgiusers.org/Meeting/201305>`_
+in Grenoble.
 
 * PC: a Qt application that summarizes some information about the local and
   remote Pelix frameworks
