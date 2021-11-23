@@ -25,6 +25,7 @@ import core
 # iPOPO
 from pelix.ipopo.decorators import ComponentFactory, Validate, \
     Invalidate, Instantiate, Provides, Property, Requires
+import pelix.constants
 import pelix.framework
 import pelix.remote
 import pelix.services
@@ -176,7 +177,7 @@ class BasicProbe(object):
 
         # Setup the event properties
         props = {}
-        props["service.id"] = ref.get_property(pelix.framework.SERVICE_ID)
+        props["service.id"] = ref.get_property(pelix.constants.SERVICE_ID)
         props["service.properties"] = ref.get_properties()
 
         # Post the event
