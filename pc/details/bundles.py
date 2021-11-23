@@ -22,9 +22,9 @@ __docformat__ = "restructuredtext en"
 # Local package
 import core
 
-# PyQt4
-import PyQt4.QtGui as QtGui
-import PyQt4.QtCore as QtCore
+# PyQt5
+import PyQt5.QtWidgets as QtWidgets
+import PyQt5.QtCore as QtCore
 
 # iPOPO
 from pelix.ipopo.decorators import ComponentFactory, Requires, Provides, \
@@ -249,12 +249,12 @@ class BundlesDetails(object):
         Sets the content of a line
         """
         # Add the identifier
-        self._table.setItem(line, 0, QtGui.QTableWidgetItem(str(ident)))
+        self._table.setItem(line, 0, QtWidgets.QTableWidgetItem(str(ident)))
 
         # Fill it
         for i, value in enumerate(values):
             if value is not None:
-                item = QtGui.QTableWidgetItem(str(value))
+                item = QtWidgets.QTableWidgetItem(str(value))
                 self._table.setItem(line, i + 1, item)
 
         # Update the columns size
@@ -333,7 +333,7 @@ class BundlesDetails(object):
         :return: A Qt widget
         """
         # Make the table
-        self._table = QtGui.QTableWidget(0, 3, parent)
+        self._table = QtWidgets.QTableWidget(0, 3, parent)
         self._table.setHorizontalHeaderLabels(('ID', 'Name', 'Status'))
         self._table.verticalHeader().hide()
 

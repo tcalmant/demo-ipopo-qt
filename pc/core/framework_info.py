@@ -28,8 +28,8 @@ from pelix.ipopo.decorators import ComponentFactory, Requires, \
 import pelix.ipopo.constants as constants
 import pelix.remote
 
-# PyQt4
-import PyQt4.QtGui as QtGui
+# PyQt5
+import PyQt5.QtWidgets as QtWidgets
 
 # Standard library
 import logging
@@ -212,7 +212,7 @@ class FrameworkInstanceInfo(object):
             return self._widget
 
         # Make the tab bar
-        self._widget = QtGui.QTabWidget(parent)
+        self._widget = QtWidgets.QTabWidget(parent)
 
         # Add all known details
         for service, reference in self._details_refs.items():

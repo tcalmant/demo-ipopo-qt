@@ -22,7 +22,7 @@ Requirements
 ************
 
 This demonstration requires ``iPOPO``, ``jsonrpclib-pelix`` and ``PyQt``
-(tested with PyQt4).
+(tested with PyQt5).
 
 On Ubuntu, those are installed using:
 
@@ -30,4 +30,4 @@ On Ubuntu, those are installed using:
 
    sudo pip install --upgrade iPOPO
    sudo pip install --upgrade jsonrpclib-pelix
-   sudo apt-get install python-qt4
+   sudo apt-get install python-qt5

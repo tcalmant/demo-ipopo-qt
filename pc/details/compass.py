@@ -22,9 +22,10 @@ __docformat__ = "restructuredtext en"
 # Local package
 import core
 
-# PyQt4
-import PyQt4.QtGui as QtGui
-import PyQt4.QtCore as QtCore
+# PyQt5
+import PyQt5.QtCore as QtCore
+import PyQt5.QtGui as QtGui
+import PyQt5.QtWidgets as QtWidgets
 
 # iPOPO
 from pelix.ipopo.decorators import ComponentFactory, Requires, Provides, \
@@ -170,7 +171,7 @@ class CompassDetailsCreator(object):
 
 # ------------------------------------------------------------------------------
 
-class CompassWidget(QtGui.QWidget):
+class CompassWidget(QtWidgets.QWidget):
     """
     Compass widget
 
@@ -183,7 +184,7 @@ class CompassWidget(QtGui.QWidget):
 
         :param parent: UI container
         """
-        QtGui.QWidget.__init__(self, parent)
+        QtWidgets.QWidget.__init__(self, parent)
 
         self._angle = 0.0
         self._margins = 10
