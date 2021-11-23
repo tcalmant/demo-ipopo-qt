@@ -31,6 +31,7 @@ import PyQt5.QtWidgets as QtWidgets
 from pelix.ipopo.decorators import ComponentFactory, Requires, Provides, \
     Property, Instantiate, Invalidate, Validate
 import pelix.ipopo.constants as constants
+import pelix.constants
 import pelix.framework
 import pelix.remote
 import pelix.services
@@ -99,11 +100,11 @@ class ServicesDetailsCreator(object):
 
             if uid:
                 probe_filter = "({0}={1})" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID, uid)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID, uid)
 
             else:
                 probe_filter = "(!({0}=*))" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
 
             properties[constants.IPOPO_REQUIRES_FILTERS] = {'_probe':
                                                             probe_filter}
@@ -258,7 +259,7 @@ class ServicesDetails(object):
         :param properties: A dictionary
         :return: A (service ID, specifications) tuple
         """
-        keys = (pelix.framework.SERVICE_ID, pelix.framework.OBJECTCLASS)
+        keys = (pelix.constants.SERVICE_ID, pelix.constants.OBJECTCLASS)
         result = []
 
         # Extract values
@@ -298,6 +299,8 @@ class ServicesDetails(object):
             if item.column() == 0:
                 # ID match, return the row number
                 return item.row()
+        else:
+            return -1
 
 
     def __update_line(self, ident, *values):

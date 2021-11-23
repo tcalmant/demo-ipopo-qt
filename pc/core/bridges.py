@@ -64,7 +64,7 @@ class ProbeBridge(object):
         """
         A probe has been bound
         """
-        framework_uid = reference.get_property(pelix.remote.PROP_FRAMEWORK_UID)
+        framework_uid = reference.get_property(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
 
         # Store, using the framework UID
         self._frameworks[framework_uid] = service
@@ -79,7 +79,7 @@ class ProbeBridge(object):
         """
         A probe has gone
         """
-        framework_uid = reference.get_property(pelix.remote.PROP_FRAMEWORK_UID)
+        framework_uid = reference.get_property(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
 
         if framework_uid in self._frameworks:
             # Remove it from the local storage

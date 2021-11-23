@@ -99,11 +99,11 @@ class CompassDetailsCreator(object):
 
             if uid:
                 probe_filter = "({0}={1})" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID, uid)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID, uid)
 
             else:
                 probe_filter = "(!({0}=*))" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
 
             properties[constants.IPOPO_REQUIRES_FILTERS] = {'_compass':
                                                             probe_filter}

@@ -98,11 +98,11 @@ class BundlesDetailsCreator(object):
 
             if uid:
                 probe_filter = "({0}={1})" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID, uid)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID, uid)
 
             else:
                 probe_filter = "(!({0}=*))" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
 
             properties[constants.IPOPO_REQUIRES_FILTERS] = {'_probe':
                                                             probe_filter}
@@ -273,6 +273,8 @@ class BundlesDetails(object):
             if item.column() == 0:
                 # ID match, return the row number
                 return item.row()
+        else:
+            return -1
 
 
     def __update_line(self, ident, *values):

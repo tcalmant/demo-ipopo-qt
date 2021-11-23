@@ -101,13 +101,13 @@ class FrameworkInstanceInfoCreator(object):
             properties[core.PROP_PROBE_UID] = framework_uid
             if framework_uid:
                 probe_filter = "({0}={1})" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID,
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID,
                                        framework_uid)
                 details_filter = "({0}={1})".format(core.PROP_PROBE_UID,
                                                     framework_uid)
             else:
                 probe_filter = "(!({0}=*))" \
-                               .format(pelix.remote.PROP_FRAMEWORK_UID)
+                               .format(pelix.remote.PROP_ENDPOINT_FRAMEWORK_UUID)
                 details_filter = "(!({0}=*))".format(core.PROP_PROBE_UID)
 
             properties[constants.IPOPO_REQUIRES_FILTERS] = {
